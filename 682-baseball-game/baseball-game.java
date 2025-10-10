@@ -1,6 +1,6 @@
 class Solution {
     public int calPoints(String[] operations) {
-        List<Integer> a = new ArrayList<>();
+       /* List<Integer> a = new ArrayList<>();
 
         for (String op : operations) {
             if (op.equals("C")) {
@@ -21,6 +21,37 @@ class Solution {
             sum += score;
         }
 
-        return sum;
+        return sum;*/
+     
+
+
+        Stack<Integer> st = new Stack<>();
+        
+        for (String s : operations) {
+            if (s.equals("C")) {
+                st.pop();
+            } 
+            else if (s.equals("D")) {
+                st.push(st.peek() * 2);
+            } 
+            else if (s.equals("+")) {
+                int last = st.pop();
+                int secondLast = st.peek();
+                int sum = last + secondLast;
+                st.push(last);
+                st.push(sum);
+            } 
+            else {
+                st.push(Integer.parseInt(s));
+            }
+        }
+        
+        int total = 0;
+        for (int score : st) {
+            total += score;
+        }
+        
+        return total;
     }
 }
+    

@@ -25,17 +25,7 @@ This repository showcases all my personally solved problems, categorized by diff
 
 ---
 
-### ⚡ LeetCode Summary
 
-| Difficulty | Problems Solved |
-|-------------|----------------|
-| 🟢 Easy | 35 |
-| 🟡 Medium | 22 |
-| 🔴 Hard | 5 |
-
-_Total: 62 problems and counting ⏱️_
-
----
 
 ### 🏆 Achievements
 

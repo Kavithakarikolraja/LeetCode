@@ -4,9 +4,7 @@
   <img src="https://leetcard.jacoblin.cool/kavitha_karikolraja?ext=contest&theme=dark&animation=true&font=baloo&border=1&radius=20" alt="LeetCode Stats" />
 </p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Winky+Rough&pause=1000&color=00FFAA&center=true&vCenter=true&width=600&lines=💡+Consistency+is+Key!;🔥+1%+better+each+day!;🧠+Keep+Learning,+Keep+Growing!" alt="Typing Animation"/>
-</p>
+
 
 
 

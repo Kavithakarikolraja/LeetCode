@@ -1,7 +1,5 @@
 class Solution {
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
-
-        //Arrays.sort(arr1);
         
         int[] freq = new int[1001];
         List<Integer> result = new ArrayList<>();

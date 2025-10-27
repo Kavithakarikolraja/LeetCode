@@ -28,7 +28,7 @@ This repository showcases all my personally solved problems, categorized by diff
 ### 🏆 Achievements
 
 - 🥇 Maintained daily LeetCode streaks  
-- 🚀 Covered key DSA topics (Arrays, Strings, Trees, DP, Graphs)  
+- 🚀 Covered key DSA topics (Arrays, Strings)  
 - 💻 Focused on writing clean, efficient code  
 
 ---

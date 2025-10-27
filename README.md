@@ -16,10 +16,8 @@ This repository showcases all my personally solved problems, categorized by diff
 
 ---
 
-### 🧠 My DSA Tools
+### 🧠 My DSA Tool
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
   <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/>
 </p>
 

@@ -1,17 +1,15 @@
 class Solution {
     public int[] numberOfLines(int[] widths, String s) {
-        int count = 0, line = 1;
-
+        int lines = 1, last = 0;
         for (int i = 0; i < s.length(); i++) {
             int w = widths[s.charAt(i) - 'a'];
-            if (count + w > 100) {
-                line++;
-                count = w;
+            if (last + w > 100) {
+                lines++;
+                last = w;
             } else {
-                count += w;
+                last += w;
             }
         }
-
-        return new int[]{line, count};
+        return new int[] { lines, last };
     }
 }

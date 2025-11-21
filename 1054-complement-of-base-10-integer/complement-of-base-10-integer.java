@@ -10,6 +10,6 @@ class Solution {
             mask = (mask<<1)|1;
             temp>>=1;
         }
-        return (mask^temp)-n;
+        return n^mask;
     }
 }

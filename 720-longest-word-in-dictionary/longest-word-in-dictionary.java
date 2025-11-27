@@ -1,22 +1,33 @@
 class Solution {
-    public String longestWord(String[] words) {
-        Set<String> dict = new HashSet<>(Arrays.asList(words));
-        
-       
-        Arrays.sort(words, (a, b) -> 
-            a.length() == b.length() ? a.compareTo(b) : b.length() - a.length()
-        );
-        
-        for (String word : words) {
-            boolean valid = true;
-            for (int i = 1; i < word.length(); i++) {
-                if (!dict.contains(word.substring(0, i))) {
-                    valid = false;
+    public String longestWord(String[] wordList) {
+        Set<String> wordSet = new HashSet<>();
+        for (String word : wordList) {
+            wordSet.add(word);
+        }
+
+        String result = "";
+
+        for (String word : wordList) {
+          
+            if (word.length() < result.length() ||
+               (word.length() == result.length() && word.compareTo(result) > 0)) {
+                continue;
+            }
+
+            boolean isValid = true;
+            for (int len = 1; len < word.length(); len++) {
+                String prefix = word.substring(0, len);
+                if (!wordSet.contains(prefix)) {
+                    isValid = false;
                     break;
                 }
             }
-            if (valid) return word;
+
+            if (isValid) {
+                result = word;
+            }
         }
-        return "";
+
+        return result;
     }
 }

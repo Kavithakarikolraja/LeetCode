@@ -15,7 +15,7 @@ class Solution {
             sum1 -= nums[i];
             sum2 += nums[i];
 
-            count = (((Math.abs(sum1-sum2)&1)==0) ? count+1:count);
+            count = (((sum1-sum2)%2==0) ? count+1:count);
 
         }
 

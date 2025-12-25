@@ -7,7 +7,7 @@ class Solution {
         long seq = 0;
 
         for(int i=happiness.length-1;i>=0;i--){
-            if(happiness[i]-seq<=0) count+= 0;
+            if(happiness[i]-seq<=0) return count;
             else count += happiness[i]-seq;
            seq++;
            k--;

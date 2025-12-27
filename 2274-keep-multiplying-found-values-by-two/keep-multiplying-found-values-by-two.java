@@ -1,7 +1,7 @@
 class Solution {
     public int findFinalValue(int[] nums, int original) {
 
-        Arrays.sort(nums);
+      //  Arrays.sort(nums);
         boolean cond = true;
         
        while(cond){

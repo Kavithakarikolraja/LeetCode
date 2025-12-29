@@ -7,6 +7,6 @@ class Solution {
 
         int ans = (sum%k==0) ? 0 : sum%k;
 
-        return ans;
+        return (sum%k==0) ? 0 : sum%k;
     }
 }

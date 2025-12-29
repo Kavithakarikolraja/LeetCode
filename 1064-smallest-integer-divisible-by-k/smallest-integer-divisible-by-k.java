@@ -5,9 +5,11 @@ class Solution {
         int sum = 0;
         
 
-       for(int i=1;i<=Math.pow(k,2);i++){
+       for(int i=1;i<=k;i++){
           sum = (sum*10+1)%k;
-          if(sum==0) return i;
+          if(sum==0) {
+            return i;
+          }
        }
         return -1;
     }

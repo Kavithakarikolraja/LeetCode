@@ -1,14 +1,18 @@
 class Solution {
     public int smallestRangeI(int[] nums, int k) {
-         int max = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
         for (int num : nums) {
-            max = Math.max(max, num);
-            min = Math.min(min, num);
+            if (num > max) {
+                max = num;
+            }
+            if (num < min) {
+                min = num;
+            }
         }
 
-        return Math.max(0, (max - min) - 2 * k);
-
+        int val = (max - min) - 2 * k;
+        return val < 0 ? 0 : val;
     }
 }

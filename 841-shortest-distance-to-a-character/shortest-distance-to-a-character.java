@@ -1,29 +1,26 @@
-import java.util.*;
-
 class Solution {
-    public int[] shortestToChar(String s, char c) {
-        List<Integer> positions = new ArrayList<>();
-        int idx = 0;
-
+    public int[] shortestToChar(String s, char target) {
+        int length = s.length();
+        int[] result = new int[length];
         
-        for (char ch : s.toCharArray()) {
-            if (ch == c) {
-                positions.add(idx);
+      
+        int lastSeen = Integer.MAX_VALUE / 2; 
+        for (int index = 0; index < length; index++) {
+            if (s.charAt(index) == target) {
+                lastSeen = index;
             }
-            idx++;
+            result[index] = Math.abs(index - lastSeen);
         }
-
-        int[] res = new int[s.length()];
-
-    
-        for (int i = 0; i < s.length(); i++) {
-            int minDist = Integer.MAX_VALUE;
-            for (int pos : positions) {
-                minDist = Math.min(minDist, Math.abs(i - pos));
+        
+        
+        lastSeen = Integer.MAX_VALUE / 2;
+        for (int index = length - 1; index >= 0; index--) {
+            if (s.charAt(index) == target) {
+                lastSeen = index;
             }
-            res[i] = minDist;
+            result[index] = Math.min(result[index], Math.abs(index - lastSeen));
         }
-
-        return res;
+        
+        return result;
     }
 }

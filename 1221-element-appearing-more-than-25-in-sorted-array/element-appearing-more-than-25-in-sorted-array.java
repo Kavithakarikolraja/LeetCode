@@ -3,7 +3,7 @@ class Solution {
         
         int val = arr.length/4;
 
-        int[] freq = new int[10000000];
+       /* int[] freq = new int[10000000];
 
         for(int num : arr){
             freq[num]++;
@@ -11,6 +11,12 @@ class Solution {
 
         for(int i=0;i<arr.length;i++){
             if(freq[arr[i]] >val){
+                return arr[i];
+            }
+        }*/
+
+        for(int i=0;i<arr.length-val;i++){
+            if(arr[i]==arr[i+val]){
                 return arr[i];
             }
         }

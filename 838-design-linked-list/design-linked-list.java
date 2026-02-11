@@ -1,20 +1,22 @@
 class MyLinkedList {
 
-    Node head;
+    Node head,tail;
     int count;
     private class Node{
         int data;
         Node next;
+        Node prev;
 
         Node(int value){
             data = value;
-           // next = null;
+        next = null;
+        prev = null;
         }
     }
 
     public MyLinkedList() {
 
-        head = null;
+        
         count = 0;
     }
     
@@ -29,24 +31,33 @@ class MyLinkedList {
     }
     
     public void addAtHead(int val) {
-        
+
         Node n1 = new Node(val);
 
+        if(head==null){
+            head=tail=n1;
+            
+        }else{
+        
+
         n1.next = head;
+        head.prev = n1;
         head = n1;
+        }
         count++;
 }
     
     public void addAtTail(int val) {
 
         Node n1 = new Node(val);
-        Node temp = head;
+        
 
         if(head==null){
-           head = n1;
+           head =tail = n1;
         }else{
-           for(;temp.next!=null;temp = temp.next);
-           temp.next = n1;
+           tail.next = n1;
+           n1.prev = tail;
+           tail = n1;
         }
         count++;
         
@@ -58,8 +69,14 @@ class MyLinkedList {
         
          if (index < 0 || index > count) return;
 
+         if(index==count){
+            addAtTail(val);
+            return;
+         }
+
         if(index==0){
             n1.next = head;
+            head.prev = n1;
             head = n1;
         }else{
 
@@ -69,7 +86,10 @@ class MyLinkedList {
             temp = temp.next;
         }
         n1.next = temp.next;
+        temp.next.prev = n1;
+
         temp.next = n1;
+        n1.prev = temp;
         }
 
         count++;
@@ -79,18 +99,38 @@ class MyLinkedList {
     public void deleteAtIndex(int index) {
         
         if(index<0||index>=count) return;
+        
         if (index == 0) { 
-        head = head.next;
-    }else{
+            if (count == 1) {
+                 head = tail = null;
+                  } 
+                  else { 
+                    head = head.next; 
+                    head.prev = null; 
+                    } 
+                    count--; 
+                    return; 
+                    }
+
+        if(index==count-1){
+            tail = tail.prev;
+            tail.next = null;
+            count--;
+            return;
+        }
+   
 
         Node temp = head;
 
-        for(int i=0;i<index-1;i++,temp=temp.next);
+        for(int i=0;i<index-1;i++){
+        temp=temp.next;
+        }
 
         temp.next = temp.next.next;
-    }
-        count--;
-    }
+        temp.next.prev = temp;
+            count--;
+    
+}
 }
 
 /**

@@ -16,7 +16,7 @@ class MyLinkedList {
 
     public MyLinkedList() {
 
-        
+        head=tail=null;
         count = 0;
     }
     

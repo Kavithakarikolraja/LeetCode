@@ -26,8 +26,7 @@ class Solution {
 
         while (temp != null) {
             if (set.contains(temp.val)) {
-              
-                prev.next = temp.next;
+              prev.next = temp.next;
             } else {
                 prev = temp;
             }

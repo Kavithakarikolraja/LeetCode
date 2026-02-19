@@ -33,7 +33,7 @@ class MinStack {
         if(head1==null){
             head1 = n2;
         }else{
-            if(head1.data>=val){
+            if(head1.data>=n2.data){
                 n2.next = head1;
                 head1 = n2;
             }

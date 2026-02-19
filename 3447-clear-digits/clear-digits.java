@@ -6,7 +6,7 @@ class Solution {
         Stack<Character> re = new Stack<>();
 
         for(int i=0;i<s.length();i++){
-            if(s.charAt(i)>='0'&& s.charAt(i)<='9'){
+            if(Character.isDigit(s.charAt(i))){
                 if(!re.isEmpty()) {
                     re.pop(); 
                 }

@@ -2,9 +2,11 @@ class Solution {
     public String largestGoodInteger(String num) {
         
     
-        int max = Integer.MIN_VALUE;
+       /* int max = Integer.MIN_VALUE;
 
         for(int i=2;i<num.length();i++){
+
+            
             
             if(max>Integer.parseInt(String.valueOf(num.charAt(i)))) continue;
             
@@ -23,6 +25,23 @@ class Solution {
             return String.valueOf(max).repeat(3);
         }
 
-        return "";
+        return "";*/
+
+        String result="";
+       for(int i=0;i<num.length()-2;i++){
+          
+          char ch = num.charAt(i);
+
+          if(ch==num.charAt(i+1)&&ch==num.charAt(i+2)){
+                 String temp = num.substring(i,i+3);
+
+                 if(result.compareTo(temp)<0){
+                    result  = temp;
+                 }
+          }
+            
+            
+       }
+ return result;
     }
 }

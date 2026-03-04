@@ -14,7 +14,7 @@ class Solution {
                 
 
                 for(int j=pos+1;j<nums.length;j++){
-                    if(swap1<nums[j]&&swap2>nums[j]){
+                    if(swap1<nums[j]&&swap2>=nums[j]){
                         swap2 = nums[j];
                         pos1 = j;
                     }
@@ -22,17 +22,27 @@ class Solution {
                 if(pos1!=-1){
                 nums[pos] = swap2;
                 nums[pos1] = swap1;
-                Arrays.sort(nums, pos+1, nums.length);
+                reverse(nums, pos+1, nums.length-1);
                 }
                   break;
             }
 
         }
                 if(happen==false){
-                    Arrays.sort(nums,0,nums.length);
+                    reverse(nums,0,nums.length-1);
                 }
                
             
         
+    }
+
+    private void reverse(int[] nums, int left, int right) {
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
+        }
     }
 }

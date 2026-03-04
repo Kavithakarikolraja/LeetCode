@@ -28,7 +28,7 @@ class Solution {
             }
 
         }
-                if(happen==false){
+                if(!happen){
                     reverse(nums,0,nums.length-1);
                 }
                

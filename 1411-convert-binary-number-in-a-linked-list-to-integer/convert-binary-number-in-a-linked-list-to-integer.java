@@ -20,7 +20,7 @@ class Solution {
             temp =temp.next;
         }
 
-        int decimalInt = 0;
+       /* int decimalInt = 0;
 
        
         for(int i=0;BinaryInt>0;i++){
@@ -28,8 +28,8 @@ class Solution {
                 decimalInt += (1<<i) ;
             }
           BinaryInt = BinaryInt>>1;
-        }
+        }*/
 
-        return decimalInt;
+        return BinaryInt;
     }
 }

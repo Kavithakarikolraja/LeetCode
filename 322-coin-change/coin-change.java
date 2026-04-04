@@ -1,25 +1,23 @@
 class Solution {
-    public int coinChange(int[] coins, int amount) {
-        
-        int[] dp = new int[amount + 1];
-        Arrays.fill(dp, -2); 
-        return coin_helper(coins, amount, dp);
-    }
+  
+    public int coinChange(int[] coinValues, int targetAmount) {
+        if (targetAmount < 1) {
+            return 0;
+        }
 
-    private int coin_helper(int[] coins, int amount, int[] dp) {
-        if (amount == 0) return 0;      
-        if (amount < 0) return -1;       
-        if (dp[amount] != -2) return dp[amount]; 
+        int[] minCoins = new int[targetAmount + 1];
+        Arrays.fill(minCoins, targetAmount + 1);
+        minCoins[0] = 0;
 
-        int min = Integer.MAX_VALUE;
-        for (int coin : coins) {
-            int res = coin_helper(coins, amount - coin, dp);
-            if (res >= 0 && res < min) {
-                min = 1 + res; 
+        for (int currentAmount = 1; currentAmount <= targetAmount; currentAmount++) {
+            for (int coin : coinValues) {
+                if (coin <= currentAmount) {
+                    minCoins[currentAmount] = Math.min(minCoins[currentAmount], 
+                                                       minCoins[currentAmount - coin] + 1);
+                }
             }
         }
 
-        dp[amount] = (min == Integer.MAX_VALUE) ? -1 : min;
-        return dp[amount];
+        return minCoins[targetAmount] > targetAmount ? -1 : minCoins[targetAmount];
     }
 }

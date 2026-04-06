@@ -9,14 +9,14 @@ class Solution {
                 pos++;
             } 
 
-            StringBuilder temp = new StringBuilder();
+            StringBuilder temp_s = new StringBuilder();
             if(Character.isLetter(s.charAt(pos))) {
                 while(pos < s.length() && Character.isLetter(s.charAt(pos))) {
-                    temp.append(s.charAt(pos));
+                    temp_s.append(s.charAt(pos));
                     pos++;
                 }
-                 if(temp.length()>0) {
-                    a.push(temp.toString());
+                 if(temp_s.length()>0) {
+                    a.push(temp_s.toString());
                 }
             }
 

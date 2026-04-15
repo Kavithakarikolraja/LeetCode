@@ -21,8 +21,8 @@ class Solution {
             if(check[i]==false){
                 continue;
             }
-
-            for(int j=i*i;j<n;j+=2*i){
+            int jump = i<<1;
+            for(int j=i*i;j<n;j+=jump){
                 //count--;
                 if(check[j]==true)
                 check[j] =  false;

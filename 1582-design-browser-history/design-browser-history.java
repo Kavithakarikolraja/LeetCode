@@ -37,7 +37,7 @@
 
        
 		   
-		   while( steps > 0 && curr.prev!=null ){
+		   while(curr.prev!=null &&  steps > 0  ){
 			   curr = curr.prev;
 			   steps--;
 		   }
@@ -52,7 +52,7 @@
     public String forward(int steps) {
 		  
 		   
-		   while(  steps > 0 && curr.next!=null){
+		   while(  curr.next!=null && steps > 0 ){
 			   curr = curr.next;
 			   steps--;
 		   }

@@ -16,22 +16,22 @@
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         
-        Stack<TreeNode> q1 = new Stack<>();
-        Stack<TreeNode> q2 = new Stack<>();
+        Stack<TreeNode> s1 = new Stack<>();
+        Stack<TreeNode> s2 = new Stack<>();
         List<List<Integer>> a = new ArrayList<>();
-        q1.push(root);
+        s1.push(root);
 
         if(root==null) return a;
 
-        while(!q1.isEmpty() || !q2.isEmpty())
+        while(!s1.isEmpty() || !s2.isEmpty())
         {
             
             List<Integer> in_list = new ArrayList<>();
-            if(q2.isEmpty())
+            if(s2.isEmpty())
             {
-                while(!q1.isEmpty())
+                while(!s1.isEmpty())
                 {
-                    TreeNode curr = q1.pop();
+                    TreeNode curr = s1.pop();
                     if(curr!=null)
                     {
                     in_list.add(curr.val);
@@ -39,30 +39,30 @@ class Solution {
                     
                     if(curr.left!=null)
                     {
-                        q2.push(curr.left);
+                        s2.push(curr.left);
                     }
                     if(curr.right!=null)
                     {
-                        q2.push(curr.right);
+                        s2.push(curr.right);
                     }
                     
                 }
             }else
             {
-              while(!q2.isEmpty())
+              while(!s2.isEmpty())
                 {
-                    TreeNode curr = q2.pop();
+                    TreeNode curr = s2.pop();
                     if(curr!=null)
                     {
                     in_list.add(curr.val);
                     }
                      if(curr.right!=null)
                     {
-                        q1.push(curr.right);
+                        s1.push(curr.right);
                     }
                      if(curr.left!=null)
                     {
-                        q1.push(curr.left);
+                        s1.push(curr.left);
                     }
                 }  
             }

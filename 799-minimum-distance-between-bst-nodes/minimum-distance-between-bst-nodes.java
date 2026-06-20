@@ -14,42 +14,29 @@
  * }
  */
 class Solution {
+     
+     TreeNode prev = null;
+     int min = Integer.MAX_VALUE;
     public int minDiffInBST(TreeNode root) {
-        
-       Queue<TreeNode> q = new LinkedList<>();
-       List<Integer> a = new ArrayList<>();
-       int min = Integer.MAX_VALUE;
-       q.add(root);
-
-       while(!q.isEmpty())
-       {
-        
-        TreeNode curr = q.poll();
-        a.add(curr.val);
-        
-        if(curr.left!=null)
-        {
-             q.add(curr.left);
-        }
-
-        if(curr.right!=null)
-        {
-             
-            
-             q.add(curr.right);
-        }
-       }
-       
-       for(int i=0;i<a.size()-1;i++)
-       {
-        for(int j=i+1;j<a.size();j++)
-        {
-            int val = Math.abs(a.get(i)-a.get(j));
-            min = Math.min(min,val);
-        }
-       }
-       return min;
+      
+      inorder(root); 
+      return min;
     }
 
-   
+    public void inorder(TreeNode root){
+
+    {
+        if(root==null) return ;
+    }
+
+    inorder(root.left);
+    if(prev!=null )
+    {
+    min = Math.min(min,Math.abs(root.val-prev.val));
+    }
+    prev = root;
+    inorder(root.right);
+
+   //return min;
+    }
 }

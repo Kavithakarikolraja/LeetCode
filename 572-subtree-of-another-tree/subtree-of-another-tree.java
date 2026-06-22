@@ -16,31 +16,9 @@
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
 
-      /*if((root.left==null&&root.right==null) && (subRoot.left==null&& subRoot.right==null)&&(root.val!=subRoot.val) ) return false;  
-        
-       TreeNode subRoot1 = root_finder(root,subRoot.val);
-       return  isSame(subRoot1,subRoot);
-    }
-
-    public TreeNode root_finder(TreeNode root,int value)
-    {
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        //TreeNode ori = new TreeNode(0);
-
-        while(!q.isEmpty())
-        {
-            TreeNode curr = q.poll();
-            if(curr.val==value) ori = curr;
-
-            if(curr.left!=null) q.add(curr.left);
-            if(curr.right!=null) q.add(curr.right);
-        }
-
-        return ori;
-    }
     
-*/
+    
+
        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         
@@ -64,12 +42,12 @@ class Solution {
     {
         if(t==null && s==null) return true;
 
-        if(t.left!=null && s.left==null || t.left==null && s.left!=null || t.right!=null && s.right==null || t.right==null && s.right!=null)
+        if(t.left!=null && s.left==null || t.left==null && s.left!=null || t.right!=null && s.right==null || t.right==null && s.right!=null ||  t.val!=s.val)
         {
             return false;
         }
 
-        if(t.val!=s.val) return false;
+        
 
         return isSame(t.left,s.left) && isSame(t.right,s.right);
     }

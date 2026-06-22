@@ -20,20 +20,31 @@ class Solution {
         
         
         Queue<TreeNode> q = new LinkedList<>();
-        HashSet<Integer> a = new HashSet<>();
+        //HashSet<Integer> a = new HashSet<>();
         q.add(root);
-        a.add(root.val);
+        //a.add(root.val);
 
         while(!q.isEmpty())
         {
             TreeNode curr = q.poll();
-            a.add(curr.val);
-            if(curr.left!=null) q.add(curr.left); 
-            if(curr.right!=null) q.add(curr.right);
+           
+            if(curr.left!=null)
+            {
+                if(root.val!=curr.left.val) return false;
+                 q.add(curr.left); 
+            }
+            if(curr.right!=null)
+            {
+                if(curr.right.val!=root.val) return false;
+                 q.add(curr.right);
+            }
         }
 
-        if(a.size()==1) return true;
+        
 
-        return false;
+        return true;
+
+       
     }
 }
+   

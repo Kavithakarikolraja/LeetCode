@@ -17,12 +17,12 @@ class Solution {
         int total = 0;
     public int findTilt(TreeNode root) {
         
-        if(root==null) return 0;
+        /*if(root==null) return 0;
         total += Math.abs(find(root.left)- find(root.right));
         findTilt(root.left);
-        findTilt(root.right);
+        findTilt(root.right);*/
 
-
+        find(root);
         return total;
     }
 
@@ -33,6 +33,7 @@ class Solution {
 
         int l_target = find(root.left);
         int r_target = find(root.right);
+        total += Math.abs(l_target-r_target);
 
         return root.val+l_target+r_target;
     }

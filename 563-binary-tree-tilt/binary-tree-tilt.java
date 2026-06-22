@@ -14,27 +14,22 @@
  * }
  */
 class Solution {
+        int total = 0;
     public int findTilt(TreeNode root) {
         
-        
         if(root==null) return 0;
-        root.val = Math.abs(find(root.left)- find(root.right));
+        total += Math.abs(find(root.left)- find(root.right));
         findTilt(root.left);
         findTilt(root.right);
 
 
-        return find(root);
+        return total;
     }
 
 
     public int find(TreeNode root)
     {
         if(root==null) return 0;
-
-
-        
-
-       
 
         int l_target = find(root.left);
         int r_target = find(root.right);

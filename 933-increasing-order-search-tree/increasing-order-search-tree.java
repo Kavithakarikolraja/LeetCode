@@ -17,7 +17,6 @@ class Solution {
     public TreeNode increasingBST(TreeNode root) {
         
         Queue<Integer> a = new LinkedList<>();
-
         increment(root,a);
         Queue<TreeNode> q = new LinkedList<>();
         TreeNode root_i = new TreeNode(a.poll());

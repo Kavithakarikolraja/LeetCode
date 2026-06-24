@@ -16,9 +16,9 @@
 class Solution {
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         
-        int left = 0;
-        int right = nums.length-1;
-        return construct(nums,left,right);
+        //int left = 0;
+        //int right = nums.length-1;
+        return construct(nums,0,nums.length-1);
     }
 
     public TreeNode construct(int[] arr,int left,int right)

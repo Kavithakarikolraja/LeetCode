@@ -27,7 +27,7 @@ class Solution {
 
         int maxIndex = left;
         
-        for(int i=left;i<=right;i++)
+        for(int i=left+1;i<=right;i++)
         {
             if(arr[i]>arr[maxIndex])
             {

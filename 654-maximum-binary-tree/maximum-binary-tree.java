@@ -18,7 +18,7 @@ class Solution {
         return construct(nums,0,nums.length-1);
     }
 
-    public TreeNode construct(int[] arr,int left,int right)
+    public TreeNode construct(int[] nums,int left,int right)
     {
         if(left>right) return null;
 
@@ -26,16 +26,16 @@ class Solution {
         
         for(int i=left+1;i<=right;i++)
         {
-            if(arr[i]>arr[maxIndex])
+            if(nums[i]>nums[maxIndex])
             {
                 maxIndex = i;
             }
         }
 
-        TreeNode node = new TreeNode(arr[maxIndex]);
+        TreeNode node = new TreeNode(nums[maxIndex]);
 
-        node.left = construct(arr,left,maxIndex-1);
-        node.right = construct(arr,maxIndex+1,right);
+        node.left = construct(nums,left,maxIndex-1);
+        node.right = construct(nums,maxIndex+1,right);
 
         return node;
     }

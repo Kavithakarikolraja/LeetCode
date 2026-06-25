@@ -14,9 +14,10 @@
  * }
  */
 class Solution {
-
-    public int findBottomLeftValue(TreeNode root) {
     int left = 0;
+    int height_a = 0;
+    public int findBottomLeftValue(TreeNode root) {
+   /* int left = 0;
         
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
@@ -36,6 +37,28 @@ class Solution {
 
         }
 
+        return left;*/
+
+
+        leftMost(root,0);
         return left;
+    }
+
+    public void leftMost(TreeNode root,int height)
+    {
+        if(root==null) return;
+
+        height++;
+        if(root.left==null && root.right==null)
+        {
+            if(height>height_a)
+            {
+                 left = root.val;
+                 height_a = height;
+            }
+        }
+
+        leftMost(root.left,height);
+        leftMost(root.right,height);
     }
 }

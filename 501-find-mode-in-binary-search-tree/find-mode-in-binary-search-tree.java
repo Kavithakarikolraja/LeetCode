@@ -16,7 +16,7 @@
 class Solution {
     public int[] findMode(TreeNode root) {
         
-        TreeMap<Integer,Integer> a = new TreeMap<>();
+        HashMap<Integer,Integer> a = new HashMap<>();
 
         inorder(root,a);
 
@@ -50,7 +50,7 @@ class Solution {
 
     }
 
-    public void inorder(TreeNode root,TreeMap<Integer,Integer> a)
+    public void inorder(TreeNode root,HashMap<Integer,Integer> a)
     {
         if(root==null) return;
 

@@ -9,7 +9,11 @@ class Solution {
             int count = 0;
             for(int i=0;i<citations.length;i++)
             {
-                if(citations[i]>=h_index) count++;
+                if(citations[i]>=h_index) 
+                {
+                    count++;
+                    if(count>=h_index) break;
+                }
 
             }
             if(count<h_index) break;

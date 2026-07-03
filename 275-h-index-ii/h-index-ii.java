@@ -2,7 +2,7 @@ class Solution {
     public int hIndex(int[] citations) {
          int h_index = 0;
 
-         Arrays.sort(citations);
+         //Arrays.sort(citations);
 
         while(true)
         {

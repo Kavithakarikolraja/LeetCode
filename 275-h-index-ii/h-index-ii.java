@@ -11,7 +11,7 @@ class Solution {
                 if(citations[i]>=h_index) 
                 {
                     count++;
-                    if(count>=h_index) break;
+                    if(count==h_index) break;
                 }
 
             }

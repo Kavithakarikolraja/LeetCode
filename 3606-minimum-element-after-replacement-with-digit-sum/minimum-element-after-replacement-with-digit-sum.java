@@ -9,7 +9,11 @@ class Solution {
                 sum += n%10;
                 n/=10;
             }
-            min = Math.min(min,sum);
+            if(sum < min)
+            {
+                min = sum;
+            }
+            //min = Math.min(min,sum);
         }
 
         return min;

@@ -1,22 +1,18 @@
 class Solution {
     public int numberOfUniqueGoodSubsequences(String binary) {
-        final int MOD = 1_000_000_007;
-        long endWith0 = 0; 
-        long endWith1 = 0; 
+         int mod = 1000000007;
+        long end0 = 0, end1 = 0;
         boolean hasZero = false;
 
         for (char c : binary.toCharArray()) {
             if (c == '0') {
-               
-                endWith0 = (endWith0 + endWith1) % MOD;
                 hasZero = true;
+                end0 = (end0 + end1) % mod;
             } else {
-                
-                endWith1 = (endWith0 + endWith1 + 1) % MOD;
+                end1 = (end0 + end1 + 1) % mod;
             }
         }
 
-        long result = (endWith0 + endWith1 + (hasZero ? 1 : 0)) % MOD;
-        return (int) result;
+        return (int) ((end0 + end1 + (hasZero ? 1 : 0)) % mod);
     }
 }

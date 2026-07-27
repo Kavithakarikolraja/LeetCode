@@ -1,6 +1,7 @@
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         
+        Arrays.sort(nums);
         return combination(nums);
     }
 
@@ -26,6 +27,8 @@ class Solution {
 
         for(int i = start;i<candidates.length;i++)
         {
+             if (i > start && candidates[i] == candidates[i - 1])
+                continue;
             temp.add(candidates[i]);
            
             combinationHelper(candidates,result,temp,i+1);

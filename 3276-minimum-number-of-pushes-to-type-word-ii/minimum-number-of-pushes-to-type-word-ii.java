@@ -1,7 +1,7 @@
 class Solution {
     public int minimumPushes(String word) {
         
-        Map<Character, Integer> freqMap = new HashMap<>();
+       /* Map<Character, Integer> freqMap = new HashMap<>();
         for (int i=0;i<word.length();i++) {
             freqMap.put(word.charAt(i), freqMap.getOrDefault(word.charAt(i), 0) + 1);
         }
@@ -21,6 +21,26 @@ class Solution {
             count++;
         }
 
-        return result;
+        return result;*/
+        
+        int[] freq = new int[26];
+        int c = 0;
+        int ans = 0;
+
+        for (char ch : word.toCharArray()) {
+            freq[ch - 'a']++;
+        }
+
+        Arrays.sort(freq);
+
+        for (int i = 25; i >= 0; i--) {
+            if (freq[i] == 0)
+                break;
+
+            ans += freq[i] * (c / 8 + 1);
+            c++;
+        }
+
+        return ans;
     }
 }

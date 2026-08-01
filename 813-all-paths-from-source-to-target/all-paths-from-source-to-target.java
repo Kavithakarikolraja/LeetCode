@@ -1,8 +1,7 @@
 class Solution {
-    int n;
+  
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-
-    n = graph.length;
+        
      List<List<Integer>> a = new ArrayList<>();
 
      List<List<Integer>> edge = new ArrayList<>();

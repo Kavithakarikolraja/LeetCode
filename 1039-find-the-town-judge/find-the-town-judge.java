@@ -7,21 +7,33 @@ class Solution {
             a.add(new ArrayList<Integer>());
         }
 
+        List<Integer> track = new ArrayList<>();
+        int sum = 0;
+    
         for(int i=0;i<trust.length;i++)
         {
             a.get(trust[i][0]).add(trust[i][1]);
+            if(!track.contains(trust[i][0]))
+            {
+                sum += trust[i][0];
+                track.add(trust[i][0]);
+            }
+        }
+
+        int tot = ((n*(n+1))/2);
+        int diff = tot-sum;
+        if(diff>n)
+        {
+             return -1;
         }
 
         
-        for(int i=1;i<a.size();i++)
-        {
-            if(a.get(i).size()==0)
-            {
+       
                 boolean found = false;
                 for(int j=1;j<a.size();j++)
                 {
-                   if(i==j) continue;
-                    if(!a.get(j).contains(i))
+                   if(diff==j) continue;
+                    if(!a.get(j).contains(diff))
                     {
                         found = true;
                         break;
@@ -31,10 +43,10 @@ class Solution {
 
                 if(!found)
                 {
-                    return i;
+                    return diff;
                 }
-            }
-        }
+            
+        
 
         return -1;
     }

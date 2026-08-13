@@ -8,8 +8,6 @@ class Solution {
         int maxLength = 0;
         Map<Integer,Integer> a = new HashMap<>();
         boolean found = true;
-        //a.put(nums[0],a.getOrDefault(nums[0],0)+1);
-
         while(j<nums.length)
         {
         
